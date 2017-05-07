@@ -1,0 +1,44 @@
+{
+	"data" : "Coming Soon",
+	"movies" : [{
+		"id" : 1,
+		"name" : "Dardasim: ha'kfar he'avoud",
+		"year" : "2017",
+		"length" : "90 Min",
+		"category" : ["Animation","Adventure","Comedy","Family","Fantasy"],
+		"summary" : "In this fully animated, all-new take on the Smurfs, a mysterious map sets Smurfette and her friends Brainy, Clumsy and Hefty on an exciting race through the Forbidden Forest leading to the discovery of the biggest secret in Smurf history.",
+		"Director" : "Kelly Asbury",
+		"Stars" : ["Demi Lovato", "Rainn Wilson", "Joe Manganiello", "Jack McBrayer"]
+		},
+		{
+		"id" : 2,
+		"name" : "Porshim bi'style",
+		"year" : "2017",
+		"length" : "96 Min",
+		"category" : ["Comedy", "Crime"],
+		"summary" : "Desperate to pay the bills and come through for their loved ones, three lifelong pals risk it all by embarking on a daring bid to knock off the very bank that absconded with their money.",
+		"Director" : "Zach Braff",
+		"Stars" : ["Ann-Margret", "Peter Serafinowicz", "Joey King", "Morgan Freeman"]
+		},
+		{
+		"id" : 3,
+		"name" : "The Void",
+		"year" : "2016",
+		"length" : "90 Min",
+		"category" : ["Horror", "Mystery", "Sci-Fi"],
+		"summary" : "Shortly after delivering a patient to an understaffed hospital, a police officer experiences strange and violent occurrences seemingly linked to a group of mysterious hooded figures.",
+		"Director" : "Jeremy Gillespie",
+		"Stars" : ["Aaron Poole", "Kenneth Welsh", "Daniel Fathers", "Kathleen Munroe"]
+		},
+		{
+		"id" : 4,
+		"name" : "Mahir va'atzbani 8",
+		"year" : "2017",
+		"length" : "136 Min",
+		"category" : ["Action", "Adventure", "Crime", "Thriller"],
+		"summary" : "When a mysterious woman seduces Dom into the world of terrorism and a betrayal of those closest to him, the crew face trials that will test them as never before.",
+		"Director" : "F. Gary Gray",
+		"Stars" : ["Vin Diesel", "Jason Statham", "Dwayne Johnson", "Michelle Rodriguez"]
+		}
+	]
+}
