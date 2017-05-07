@@ -1,8 +1,9 @@
 const	express = require('express'),
 		app = express(),
 		bodyParser = require('body-parser'),
-		func = require('./function.js'),
-		port = process.env.PORT || 3000;
+		func = require('./function.js');
+
+app.set('port', (process.env.PORT || 3000));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -44,7 +45,7 @@ app.all('*',
 		res.send(func.error());
 });
 
-app.listen(port,
+app.listen(app.get('port'),
 	() => {
-		console.log(`listening to port ${port}`);
+		console.log(`listening to port ${app.get('port')}`);
 });
