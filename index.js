@@ -1,29 +1,34 @@
 const	express = require('express'),
 		app = express(),
 		bodyParser = require('body-parser'),
-		func = require('./function.js');
+		func = require('./function');
 
 app.set('port', (process.env.PORT || 3000));
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api', express.static('api'));
 
+
 app.get("/getAllComingSoon/",
 	(req, res) => {
-		res.json(func.getAllData());
+		func.getAllData().then(
+		(data) => {
+	        data.length === 0 ? res.send(func.error()) : res.json(data);
+		}, (error) => {
+		    console.log(error);
+	    });
 });
 
-app.post("/getMovieDataById/",
+app.get("/getMovieDataById/:id",
 	(req, res) => {
-		var id = req.body.movieId;
-		var result = func.getMovieById(id);
-		if(result == false) {
-			console.log(`Movie id number: ${id} has not found.`);
-			res.status(200).json({"Error" : "Movie id " + id + " has not found."});
-		}
-		console.log(`Movie id number: ${id} has found.`);
-		res.status(200).json(result);
+		// var id = req.body.movieId;
+		var id = req.params.id;
+		func.getMovieById(id).then(
+		(data) => {
+	        data.length === 0 ? res.send(func.error()) : res.json(data);
+		}, (error) => {
+		    console.log(error);
+	    });
 });
 
 app.get("/getMovieDataFilter/:year/:category",
@@ -31,13 +36,12 @@ app.get("/getMovieDataFilter/:year/:category",
 		var year = req.params.year,
 			cat = req.params.category;
 
-		var result = func.getMovieDataFilter(year,cat);
-		if(result == false) {
-			res.status(200).json({"Error" : "No Result"});
-		}
-		else {
-			res.status(200).send(result);
-		}
+		func.getMovieDataFilter(year,cat).then(
+		(data) => {
+	        data.length === 0 ? res.send(func.error()) : res.json(data);
+		}, (error) => {
+		    console.log(error);
+	    });
 		
 });
 

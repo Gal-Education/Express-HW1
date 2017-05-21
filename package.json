@@ -9,6 +9,7 @@
   "author": "Gal Amitai",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.17.1"
+    "body-parser": "^1.17.1",
+    "mongoose": "^4.10.0"
   }
 }
