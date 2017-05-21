@@ -13,7 +13,10 @@ app.get("/getAllComingSoon/",
 	(req, res) => {
 		func.getAllData().then(
 		(data) => {
-	        data.length === 0 ? res.send(func.error()) : res.json(data);
+	        if(data.length === 0)
+	        	res.send(func.error())
+	        else
+	        	res.json(data);
 		}, (error) => {
 		    console.log(error);
 	    });
@@ -25,7 +28,10 @@ app.get("/getMovieDataById/:id",
 		var id = req.params.id;
 		func.getMovieById(id).then(
 		(data) => {
-	        data.length === 0 ? res.send(func.error()) : res.json(data);
+	        if(data.length === 0)
+	        	res.send(func.error())
+	        else
+	        	res.json(data);
 		}, (error) => {
 		    console.log(error);
 	    });
@@ -38,7 +44,10 @@ app.get("/getMovieDataFilter/:year/:category",
 
 		func.getMovieDataFilter(year,cat).then(
 		(data) => {
-	        data.length === 0 ? res.send(func.error()) : res.json(data);
+	        if(data.length === 0)
+	        	res.send(func.error())
+	        else
+	        	res.json(data);
 		}, (error) => {
 		    console.log(error);
 	    });
