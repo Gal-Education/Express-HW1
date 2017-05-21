@@ -22,10 +22,9 @@ app.get("/getAllComingSoon/",
 	    });
 });
 
-app.get("/getMovieDataById/:id",
+app.post("/getMovieDataById/:id",
 	(req, res) => {
-		// var id = req.body.movieId;
-		var id = req.params.id;
+		var id = req.body.movieId;
 		func.getMovieById(id).then(
 		(data) => {
 	        if(data.length === 0)
